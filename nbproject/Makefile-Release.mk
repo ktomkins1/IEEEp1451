@@ -34,7 +34,9 @@ include Makefile
 OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES= \
+	${OBJECTDIR}/ieee1451.o \
+	${OBJECTDIR}/ieeep1451_1/identification.o
 
 
 # C Compiler Flags
@@ -55,13 +57,23 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_sdk.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_sdk.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_sdk.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_sdk.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_sdk.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a
+
+${OBJECTDIR}/ieee1451.o: ieee1451.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ieee1451.o ieee1451.cpp
+
+${OBJECTDIR}/ieeep1451_1/identification.o: ieeep1451_1/identification.cpp 
+	${MKDIR} -p ${OBJECTDIR}/ieeep1451_1
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ieeep1451_1/identification.o ieeep1451_1/identification.cpp
 
 # Subprojects
 .build-subprojects:
@@ -69,7 +81,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_sdk.a: ${OBJECTFILES}
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_sdk.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a
 
 # Subprojects
 .clean-subprojects:
