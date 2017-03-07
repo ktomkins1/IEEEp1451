@@ -11,7 +11,7 @@
 #include <string.h>
 
 typedef int std_uint128;
-typedef string String;
+typedef char * String;
 
 #endif /* P1451_STD_H */
 

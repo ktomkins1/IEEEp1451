@@ -14,6 +14,31 @@ namespace p1451_apiv0_1 {
     
     enum NodeType {NETWORK = 0, CLIENT, SENSOR, HARDWARE};
     
+    
+    //Messages
+    
+    struct Header {
+        uint8_t type;
+        uint16_t id;
+        uint8_t session_no;
+        uint16_t sequence_no;
+        uint8_t error;
+        uint8_t priority;
+        uint16_t subsequent_bytes;
+    };
+    
+    class Message {
+    private:
+        Header h;
+        uint8_t* message;
+    public:
+        String toString(){
+            
+        }
+    };
+    
+    //UUID
+    
     class p1451_UUID {
     private:
         std_uint128 uuid;
@@ -22,25 +47,19 @@ namespace p1451_apiv0_1 {
             return uuid;
         }
     };
+    
+    //Nodes
+    
     class  Node{
     private:
         NodeType type;
         p1451_UUID* uuid;
         
     };
+    
     class NodeList {};
-    struct ReturnCode {};
-    struct Response {
-        int type;
-        NodeList* nl;
-        ReturnCode* rc;
-    };
-    struct Request {
-        Node* requestor;
-        String request;
-    };
+    
     
     
 }
 #endif /* IEEEP1451_H */
-
