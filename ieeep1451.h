@@ -39,6 +39,31 @@ namespace p1451{
     
     //UUID
     
+    
+    //Messages
+    
+    struct Header {
+        uint8_t type;
+        uint16_t id;
+        uint8_t session_no;
+        uint16_t sequence_no;
+        uint8_t error;
+        uint8_t priority;
+        uint16_t subsequent_bytes;
+    };
+    
+    class Message {
+    private:
+        Header h;
+        uint8_t* message;
+    public:
+        String toString(){
+            
+        }
+    };
+    
+    //UUID
+    
     class p1451_UUID {
     private:
         std_uint128 uuid;
