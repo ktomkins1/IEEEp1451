@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/ieee1451.o \
+	${OBJECTDIR}/ieeep1451.o \
 	${OBJECTDIR}/ieeep1451_1/identification.o
 
 
@@ -65,10 +65,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libieeep1451_api.a
 
-${OBJECTDIR}/ieee1451.o: ieee1451.cpp 
+${OBJECTDIR}/ieeep1451.o: ieeep1451.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ieee1451.o ieee1451.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ieeep1451.o ieeep1451.cpp
 
 ${OBJECTDIR}/ieeep1451_1/identification.o: ieeep1451_1/identification.cpp 
 	${MKDIR} -p ${OBJECTDIR}/ieeep1451_1

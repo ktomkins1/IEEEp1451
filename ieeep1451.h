@@ -12,33 +12,6 @@
 
 namespace p1451{
     
-    enum NodeType {NETWORK = 0, CLIENT, SENSOR, HARDWARE};
-    
-    
-    //Messages
-    
-    struct Header {
-        uint8_t type;
-        uint16_t id;
-        uint8_t session_no;
-        uint16_t sequence_no;
-        uint8_t error;
-        uint8_t priority;
-        uint16_t subsequent_bytes;
-    };
-    
-    class Message {
-    private:
-        Header h;
-        uint8_t* message;
-    public:
-        String toString(){
-            
-        }
-    };
-    
-    //UUID
-    
     
     //Messages
     
@@ -72,17 +45,6 @@ namespace p1451{
             return uuid;
         }
     };
-    
-    //Nodes
-    
-    class  Node{
-    private:
-        NodeType type;
-        p1451_UUID* uuid;
-        
-    };
-    
-    class NodeList {};
     
     
     
