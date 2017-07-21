@@ -12,7 +12,9 @@
 
 namespace p1451 {
     namespace _1 {
-
+        typedef struct Message{
+            int message;
+        } Message;
 
         /*
          * Identification Services

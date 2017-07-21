@@ -4,11 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>std/communications.h</itemPath>
       <itemPath>ieeep1451.h</itemPath>
       <itemPath>ieeep1451_1.h</itemPath>
-      <itemPath>std/networking.h</itemPath>
-      <itemPath>p1451_std.h</itemPath>
+      <itemPath>std/platform.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -52,11 +50,7 @@
       </item>
       <item path="ieeep1451_1/identification.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="p1451_std.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="std/communications.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="std/networking.h" ex="false" tool="3" flavor2="0">
+      <item path="std/platform.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="3">
@@ -89,11 +83,7 @@
       </item>
       <item path="ieeep1451_1/identification.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="p1451_std.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="std/communications.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="std/networking.h" ex="false" tool="3" flavor2="0">
+      <item path="std/platform.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
